@@ -122,7 +122,18 @@ class Character extends Sprite
 
 				playAnim('idle');
 
-			case 'spooky':
+			case 'tankman':
+				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
+				frames = tex;
+				animation.addByPrefix('singUP', 'Tankman UP note 1', 24, false);
+				animation.addByPrefix('singDOWN', 'Tankman DOWN note 1', 24, false);
+				animation.addByPrefix('singLEFT', 'Tankman Note Left 1', 24, false);
+				animation.addByPrefix('singRIGHT', 'Tankman Right Note 1', 24, false);
+				animation.addByIndices('idle', 'Tankman Idle Dance', [0, 2, 6], "", 12, false);
+				healthBarColor.setRGB(213, 126, 0, 255);
+				loadOffsetFile(curCharacter);
+
+                        case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
 				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
@@ -133,8 +144,8 @@ class Character extends Sprite
 				animation.addByIndices('danceRight', 'spooky dance idle', [8, 10, 12, 14], "", 12, false);
 				healthBarColor.setRGB(213, 126, 0, 255);
 				loadOffsetFile(curCharacter);
-
 				playAnim('danceRight');
+
 			case 'mom':
 				tex = Paths.getSparrowAtlas('characters/Mom_Assets');
 				frames = tex;
